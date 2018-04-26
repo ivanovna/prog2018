@@ -45,6 +45,8 @@ namespace SportGames
         /// Информация о составе команды
         /// </summary>
         public List<TeamMember> TeamMembers { get; set; }
+        
+
     }
 
     /// <summary>
@@ -52,6 +54,14 @@ namespace SportGames
     /// </summary>
     public class TeamMember
     {
+        /// <summary>
+		/// Конструктор
+		/// </summary>
+		public TeamMember()
+        {
+            //Создаем объект контактной информации
+            Contact = new ContactDetails();
+        }
         /// <summary>
         /// ФИО участника
         /// </summary>
@@ -87,8 +97,25 @@ namespace SportGames
         /// Контактные данные
         /// </summary>
         public ContactDetails Contact { get; set; }
-    }
 
+        public override string ToString()
+        {
+            return string.Format("{0}    |    {1}    |    {2}    |    {3} лет    |    {4}    |    {5}", FullName, Sex == Sex.Male ? "М" : "Ж", GroupNumber, Age, Contact.PhoneNumber, Contact.EMail );
+        }
+        public TeamMember Clone()
+        {
+            return new TeamMember
+            {
+                FullName = FullName,
+                Sex = Sex,
+                GroupNumber = GroupNumber,
+                Age = Age,
+                UniversityTeam = UniversityTeam,
+                SportsСategory = SportsСategory,
+                Contact = Contact.Clone()
+            };
+        }
+    }
     /// <summary>
     /// Контактные данные
     /// </summary>
@@ -102,13 +129,22 @@ namespace SportGames
         /// Адрес электронной почты
         /// </summary>
         public string EMail { get; set; }
+        public ContactDetails Clone()
+        {
+            return new ContactDetails
+            {
+                PhoneNumber = PhoneNumber,
+                EMail = EMail
+            };
+        }
     }
+
     public enum Sport
     {
-        Basketball,      // Баскетбол
-        Volleyball,     // Волейбол
-        Handball,      // Гандбол
-        Hockey,       // Хоккей
+        Basketball = 0,      // Баскетбол
+        Volleyball = 1,     // Волейбол
+        Handball = 2,      // Гандбол
+        Hockey = 3,       // Хоккей
     }
     public enum TeamType
     {
