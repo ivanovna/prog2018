@@ -27,7 +27,7 @@ namespace PhonebookConsole
 				var command = _factory.Create(this, text);
 				if (command == null)
 				{
-                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\Жирик.wav");
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".. \..\Жирик.wav");
                     player.Play();
                     Console.WriteLine("Команда не найдена");
 				}

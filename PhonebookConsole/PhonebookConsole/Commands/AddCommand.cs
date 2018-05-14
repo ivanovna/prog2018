@@ -44,7 +44,7 @@ namespace PhonebookConsole.Commands
         {
             if (phone.Length == 1)
             {
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\Жирик.wav");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".. \..\Жирик.wav");
                 player.Play();
                 return "Ошибка ввода!Телефон должен содержать минимум 2 символа";
             }
@@ -55,7 +55,7 @@ namespace PhonebookConsole.Commands
 				{
 					if (i != 0 || phone[i] != '+')
 					{
-                        System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\Жирик.wav");
+                        System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".. \..\Жирик.wav");
                         player.Play();
                         return "Ошибка ввода!Телефон должен состоять из цифр и может начинаться на +";
 					}

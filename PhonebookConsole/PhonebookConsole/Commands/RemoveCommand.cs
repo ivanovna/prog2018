@@ -28,7 +28,7 @@ namespace PhonebookConsole.Commands
 			var entry = Loop.Model.Entries.FirstOrDefault(e => e.Contact == text || e.Phone == text);
 			if (entry == null)
 			{
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\ржач.wav");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".. \..\ржач.wav");
                 player.Play();
                 WriteError("Запись не найдена");
 				return;

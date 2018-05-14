@@ -25,7 +25,7 @@ namespace PhonebookConsole.Commands
 		{
 			if (Loop.Model.Entries.Count == 0)
 			{
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\Жирик.wav");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".. \..\Жирик.wav");
                 player.Play();
                 WriteError("Записей не найдено");
 				return;

@@ -12,7 +12,7 @@ namespace PhonebookConsole
 	{
 		static void Main(string[] args)
 		{
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\ржач.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".. \..\ржач.wav");
             player.Play();
             Console.ReadKey();
             Console.Title = "MYSTICAL BEASTS";

@@ -102,23 +102,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="38ba2876-9146-4d6e-950b-2d2bd5a4d2d0 %281%29 %282%29.ico" />
-    <Content Include="closewindowapplication_cerca_ventan_2874.ico" />
-    <None Include="jolly-roger_98719.ico" />
     <Content Include="PiratesJollyRoger_Flag1_26099.ico" />
-    <Content Include="жириновский-770x513.ico" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Resources\Windows Proximity Notification.wav" />
-    <None Include="Resources\38ba2876-9146-4d6e-950b-2d2bd5a4d2d0 %281%29 %282%29.ico" />
-    <None Include="Resources\Icon1.ico" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +126,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

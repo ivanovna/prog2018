@@ -23,7 +23,7 @@ namespace PhonebookConsole.Commands
 		protected override void ExecuteByParams(string[] parameters)
 		{
             //Оповещаем цикл о необходимости остановки
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\прощание.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".. \..\прощание.wav");
             player.Play();
             Loop.Break = true;
 		}

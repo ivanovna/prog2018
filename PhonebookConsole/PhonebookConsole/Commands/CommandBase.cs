@@ -50,7 +50,7 @@ namespace PhonebookConsole.Commands
 			//Проверяем, что для выполнения команды было передано нужно число параметров (не считая имени самой команды)
 			if (strs.Length != _paramsCount + 1)
 			{
-                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\Жирик.wav");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@".. \..\Жирик.wav");
                 player.Play();
                 WriteError(string.Format("Для выполнения команды требуется {0} параметров", _paramsCount));
 				return;
