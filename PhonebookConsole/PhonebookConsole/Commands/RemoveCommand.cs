@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using System.Media;
+
 
 namespace PhonebookConsole.Commands
 {
@@ -26,7 +28,9 @@ namespace PhonebookConsole.Commands
 			var entry = Loop.Model.Entries.FirstOrDefault(e => e.Contact == text || e.Phone == text);
 			if (entry == null)
 			{
-				WriteError("Запись не найдена");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\ржач.wav");
+                player.Play();
+                WriteError("Запись не найдена");
 				return;
 			}
 			Loop.Model.Entries.Remove(entry);

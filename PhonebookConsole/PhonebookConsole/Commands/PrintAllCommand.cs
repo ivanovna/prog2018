@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Media;
 
 namespace PhonebookConsole.Commands
 {
@@ -24,7 +25,9 @@ namespace PhonebookConsole.Commands
 		{
 			if (Loop.Model.Entries.Count == 0)
 			{
-				WriteError("Записей не найдено");
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\Жирик.wav");
+                player.Play();
+                WriteError("Записей не найдено");
 				return;
 			}
 			WriteLine("Найдены записи: ");

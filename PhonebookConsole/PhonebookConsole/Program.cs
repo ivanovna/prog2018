@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using System.Media;
 
 namespace PhonebookConsole
 {
@@ -11,7 +12,14 @@ namespace PhonebookConsole
 	{
 		static void Main(string[] args)
 		{
-			PhonebookModel model;
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\ржач.wav");
+            player.Play();
+            Console.ReadKey();
+            Console.Title = "MYSTICAL BEASTS";
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Данный телефонный справочник содержит 5 команд:\n1.Добавить ('Номер' , 'Имя')\n2.Найти ('Номер' или 'Имя')\n3.Удалить (Полностью ввести 'Номер' или 'Имя')\n4.Просмотр\n5.Выход\n\n");
+
+            PhonebookModel model;
 			if (File.Exists(_phonebookFileName))
 			{
 				try
@@ -61,7 +69,7 @@ namespace PhonebookConsole
 			Console.ForegroundColor = ConsoleColor.Red;
 			Console.WriteLine(header);
 			Console.WriteLine(ex.Message);
-			Console.ForegroundColor = ConsoleColor.Gray;
+			Console.ForegroundColor = ConsoleColor.Yellow;
 		}
 
 		/// <summary>

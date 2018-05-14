@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Media;
 
 namespace PhonebookConsole
 {
@@ -21,17 +22,19 @@ namespace PhonebookConsole
 			//Выполняем цикл, пока не будет выставлен флаг
 			while (!Break)
 			{
-				Console.WriteLine("Введите команду: ");
+				Console.WriteLine("Введите команду:");
 				var text = Console.ReadLine();
 				var command = _factory.Create(this, text);
 				if (command == null)
 				{
-					Console.WriteLine("Команда не найдена");
+                    System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\Жирик.wav");
+                    player.Play();
+                    Console.WriteLine("Команда не найдена");
 				}
 				else
 				{
 					command.Execute(text);
-					Console.WriteLine();
+                    Console.WriteLine();
 				}
 			}
 		}

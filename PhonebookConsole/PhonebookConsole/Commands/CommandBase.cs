@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Media;
 
 namespace PhonebookConsole.Commands
 {
@@ -49,7 +50,9 @@ namespace PhonebookConsole.Commands
 			//Проверяем, что для выполнения команды было передано нужно число параметров (не считая имени самой команды)
 			if (strs.Length != _paramsCount + 1)
 			{
-				WriteError(string.Format("Для выполнения команды требуется {0} параметров", _paramsCount));
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\Жирик.wav");
+                player.Play();
+                WriteError(string.Format("Для выполнения команды требуется {0} параметров", _paramsCount));
 				return;
 			}
 			var commandName = strs[0];
@@ -61,9 +64,11 @@ namespace PhonebookConsole.Commands
 			}
 			else
 			{
-				//Если передано только название команды, то вызываем его
-				ExecuteByParams(null);
-			}
+                //Если передано только название команды, то вызываем его
+    
+                ExecuteByParams(null);
+
+            }
 		}
 
 		/// <summary>
@@ -80,7 +85,7 @@ namespace PhonebookConsole.Commands
 		{
 			Console.ForegroundColor = ConsoleColor.Red;
 			Console.WriteLine(message);
-			Console.ForegroundColor = ConsoleColor.Gray;
+			Console.ForegroundColor = ConsoleColor.Yellow;
 		}
 
 		/// <summary>

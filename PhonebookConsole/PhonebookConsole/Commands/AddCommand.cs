@@ -1,4 +1,5 @@
-﻿namespace PhonebookConsole.Commands
+﻿using System.Media;
+namespace PhonebookConsole.Commands
 {
 	/// <summary>
 	/// Команда добавления
@@ -34,22 +35,29 @@
 			}
 		}
 
-		/// <summary>
-		/// Проверить телефон
-		/// </summary>
-		/// <param name="phone">Номер телефона</param>
-		/// <returns>Сообщение об ошибке или null</returns>
-		private string CheckPhone(string phone)
-		{
-			if (phone.Length == 1)
-				return "Ошибка ввода!Телефон должен содержать минимум 2 символа";
+        /// <summary>
+        /// Проверить телефон
+        /// </summary>
+        /// <param name="phone">Номер телефона</param>
+        /// <returns>Сообщение об ошибке или null</returns>
+        private string CheckPhone(string phone)
+        {
+            if (phone.Length == 1)
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\Жирик.wav");
+                player.Play();
+                return "Ошибка ввода!Телефон должен содержать минимум 2 символа";
+            }
+
 			for (int i = 0; i < phone.Length; ++i)
 			{
 				if (!char.IsDigit(phone[i]))
 				{
 					if (i != 0 || phone[i] != '+')
 					{
-						return "Ошибка ввода!Телефон должен состоять из цифр и может начинаться на +";
+                        System.Media.SoundPlayer player = new System.Media.SoundPlayer(@"C:\Users\User\Desktop\веселье\prog2018\PhonebookConsole\PhonebookConsole\Жирик.wav");
+                        player.Play();
+                        return "Ошибка ввода!Телефон должен состоять из цифр и может начинаться на +";
 					}
 				}
 			}
@@ -57,3 +65,4 @@
 		}
 	}
 }
+ 
