@@ -1,4 +1,6 @@
 ﻿using System.Media;
+using System;
+using System.Linq;
 namespace PhonebookConsole.Commands
 {
 	/// <summary>
@@ -30,7 +32,15 @@ namespace PhonebookConsole.Commands
 			}
 			else
 			{
-				Loop.Model.Entries.Add(new PhonebookEntry() { Phone = phone, Contact = contact });
+                var phoneEx = Loop.Model.Entries.FirstOrDefault(e =>
+                    string.Equals(phone, e.Phone, StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(contact, e.Contact, StringComparison.OrdinalIgnoreCase));
+                if (phoneEx != null)
+                {
+                    WriteError(string.Format("Запись с такими данными уже существует ({0} - {1})", phoneEx.Phone, phoneEx.Contact));
+                    return;
+                }
+                Loop.Model.Entries.Add(new PhonebookEntry() { Phone = phone, Contact = contact });
 				
 			}
 		}
